@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>百度云</title>
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+		
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<body>
+        <div class="loading">正在获取资源...</div>
+        <audio src="img/123.mp3" id="audio" autoplay="autoplay"></audio>
+        <a class="mp3"></a>
+        <img class="icon-up pt-page-moveIconUp" src="img/arrow.png" />
+        <div>
+			<div class="page page-1-1 page-current">
+				<div  id = "div1" class="wrap"></div>
+			</div>
+			<div class="page page-2-1 hide">
+				<div class="wrap">
+                    <img id="img1-1" class="show-w1 hide" src="img/1-w1.png" />
+                    <img id="img1-2" class="show-w2 hide" src="img/1-w2.png" />
+                    <img id="img1-3" class="show-w3 hide" src="img/1-w3.png" />
+
+				</div>
+			</div>
+            <div class="page page-3-1 hide">
+                <div class="wrap">
+                    <img id="img2-1" class="show-w1 hide" src="img/2-w1.png" />
+                    <img id="img2-2" class="show-w2 hide" src="img/2-w2.png" />
+                    <img id="img2-3" class="show-w3 hide" src="img/2-w3.png" />
+
+
+                </div>
+            </div>
+            <div class="page page-4-1 hide">
+                <div class="wrap">
+                    <img id="img3-1" class="show-w1 hide" src="img/3-w1.png" />
+                    <img id="img3-2" class="show-w2 hide" src="img/3-w2.png" />
+                    <img id="img3-3" class="show-w3 hide" src="img/3-w3.png" />
+
+
+                </div>
+            </div>
+            <div class="page page-5-1 hide">
+                <div class="wrap">
+                    <img id="img4-1" class="show-w1 hide" src="img/4-w1.png" />
+                    <img id="img4-2" class="show-w2 hide" src="img/4-w2.png" />
+                    <img id="img4-3" class="show-w3 hide" src="img/4-w3.png" />
+
+
+                </div>
+            </div>
+            <div class="page page-6-1 hide">
+                <div class="wrap">
+                    <img id="img5-1" class="show-w1 hide" src="img/5-w1.png" />
+                    <img id="img5-2" class="show-w2 hide" src="img/5-w2.png" />
+                    <img id="img5-3" class="show-w3 hide" src="img/5-w3.png" />
+
+
+                </div>
+            </div>
+            <div class="page page-7-1 hide">
+                <div class="wrap">
+                    <img id="img6-1" class="show-w1 hide" src="img/6-w1.png" />
+                    <img id="img6-2" class="show-w2 hide" src="img/6-w2.png" />
+                    <img id="img6-3" class="show-w3 hide" src="img/6-w3.png" />
+
+
+                </div>
+            </div>
+
+            <div class="page page-8-1 hide">
+                <div class="wrap">
+                    <img class="img_1 trotateCubeBottomIn hide" src="img/end-w1.png" />
+                    <!--<img class="img_2 pt-page-rotateCubeTopIn hide" src="img/end-w2.png" />-->
+                </div>
+                <div class="radius">
+                    <img id="img1" class="z-animate1 hide" src="img/head/1.png" style="width:11%; height:7%; left:39%;top:32%;opacity: 0;"/>
+                    <img id="img2" class="z-animate2 hide" src="img/head/2.png" style="width:15%; height:9%; left: 61%;top:39%;opacity: 0;"/>
+                    <img id="img3" class="z-animate3 hide" src="img/head/3.png" style="width:14%; height:9%; left:86%;top:47%;opacity: 0;"/>
+                    <img id="img4" class="z-animate4 hide" src="img/head/4.png" style="width:10%; height:7%; left:71%;top:58%;opacity: 0;"/>
+                    <img id="img5" class="z-animate5 hide" src="img/head/5.png" style="width:13%; height:8.6%; left:10%;top:60%;opacity: 0;"/>
+                    <img id="img6" class="z-animate6 hide" src="img/head/6.png" style="width:10%; height:7%; left:23%;top:57%;opacity: 0;"/>
+                    <img id="img7" class="z-animate7 hide" src="img/head/7.png" style="width:15%; height:10%; left:78%;top:65%;opacity: 0;"/>
+                    <img id="img8" class="z-animate8 hide" src="img/head/8.png" style="width:11%; height:7%; left:22%;top:40%;opacity: 0;"/>
+					<img id="img9" class="z-animate9 hide" src="img/end-w2.png" style="width:0; height:0;left:50%;top:60%;"/>
+                </div>
+                <!--<div class="show">-->
+                    <!--<img id="img9" src="img/logo.png" style="width:0; height:0; left:50%;top:60%;"/>-->
+
+                <!--</div>-->
+
+            </div>
+			
+		</div>
+
+
+		<script src="js/zepto.min.js"></script>
+		<script src="js/touch.js"></script>
+		<script src="js/move.js"></script>
+		<script src="js/fx.js"></script>
+		<script type="text/javascript">
+		var play = 1;
+        var audio = document.getElementById('audio');
+                $(window).on('load', function(){
+                $('.loading').remove();
+                $('#div1').html('<img class="img_1 show-w1-1" src="img/index-w1.png" />');
+                $('.mp3').on('click', function(e){
+                    if(play==1){
+                        play = 0;
+                        audio.pause();
+                        $(this).addClass('stop');
+                    }else{
+                        play = 1;
+                        audio.play();
+                        $(this).removeClass('stop');
+                    }
+                })
+
+//                    $(".page-1-1").swipeUp(function () {
+//                        $("#img1-1").addClass("show-w1");
+//                        $("#img1-2").addClass("show-w2");
+//                        $("#img1-3").addClass("show-w3");
+//
+//                    });
+                    $(".page-7-1").swipeUp(function () {
+                        $(".icon-up").hide();
+                    });
+
+                    $(".page-8-1").swipeDown(function () {
+                                $(".icon-up").show();
+                            }
+
+                    );
+			});
+			function onBridgeReady() {
+    var mainTitle="百度云",
+        mainDesc="很多年以后，当他们坐在摇椅上回忆过去，准会想起上传第一张合照的那个遥远的下午",
+        mainURL="http://wxgame.wucai.com/baiduyun-new/index.html",
+        mainImgUrl= "http://wxgame.wucai.com/baiduyun-new/img/share.jpg";
+
+    //转发朋友圈
+    WeixinJSBridge.on("menu:share:timeline", function(e) {
+        var data = {
+            img_url:mainImgUrl,
+            img_width: "120",
+            img_height: "120",
+            link: mainURL,
+            desc: mainDesc,
+            title: mainTitle
+        };
+        WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+            WeixinJSBridge.log(res.err_msg)
+        });
+    });
+    //同步到微博
+    WeixinJSBridge.on("menu:share:weibo", function() {
+        WeixinJSBridge.invoke("shareWeibo", {
+            "content": mainDesc,
+            "url": mainURL
+        }, function(res) {
+            WeixinJSBridge.log(res.err_msg);
+        });
+    });
+    //分享给朋友
+    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+        WeixinJSBridge.invoke("sendAppMessage", {
+            img_url: mainImgUrl,
+            img_width: "120",
+            img_height: "120",
+            link: mainURL,
+            desc: mainDesc,
+            title: mainTitle
+        }, function(res) {
+            WeixinJSBridge.log(res.err_msg)
+        });
+    });
+};
+//执行
+document.addEventListener('WeixinJSBridgeReady', function() {
+    onBridgeReady();
+    WeixinJSBridge.call('hideToolbar');
+});
+		</script>
+	</body>
+</html>
