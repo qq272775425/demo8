@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">click</button>
+<script>
+    var arr = [3,5,8,4,7];
+    var oBtn = document.getElementById('btn');
+    var index = 0;
+    oBtn.onclick = function(){
+        console.log(  arr[ index++%arr.length ]  );
+    };
+</script>
+</body>
+</html>

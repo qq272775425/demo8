@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>移动端web相册</title>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000000;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        #container li{
+            float: left;
+        }
+        #container li img{
+            width: 100%;
+            height: 100%;
+        }
+        #large-img-container{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: #000000;
+            display: none;
+        }
+        #large-img-container img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <ul id="container"></ul>
+    <div id="large-img-container" class="animated fadeIn">
+        <!--<img id="large-img" src="" alt=""/>-->
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+        $(function(){
+            var $container = $('#container');
+            var $largeContainer = $('#large-img-container');
+            var iPadding = 2;
+
+            var count = 0;//用来计数已加载完的图片个数
+            var aImg = [];
+            for(var i=0; i<16; i++){
+                var oImg = new Image();
+                oImg.onload = function(){
+
+                    aImg.push(this);
+
+                    count++;
+                    var p = iPadding;
+
+                    if(count % 4 == 0){
+                        p = 0;
+                    }
+                    var $li = $('<li class="animated bounceIn"></li>').css({
+                        paddingTop: iPadding,
+                        paddingRight: p
+                    });
+
+                    var $cvs = $('<canvas></canvas>');
+                    $li.append($cvs);
+                    $container.append($li);
+
+                    if(count == 16){
+                        var iWinWidth = $(document.body).width() - iPadding * 3;
+                        var iPicWidth = Math.floor(iWinWidth / 4);
+
+                        aImg.sort(function(a, b){
+                            return a.index - b.index;
+                        });
+
+                        $('canvas', $container).each(function(index, elem){
+                            elem.width = elem.height = iPicWidth;
+                            var ctx = elem.getContext('2d');
+                            ctx.drawImage(aImg[index], 0, 0, iPicWidth, iPicWidth);
+                        });
+                    }
+                };
+                oImg.index = i+1;
+                oImg.src = 'img/'+(i+1)+'.jpg';
+            }
+
+
+            $container.on('tap', 'li', function(){
+                var now = index = $(this).index();
+
+                loadImg(now);
+
+            });
+
+            function loadImg(idx, animateClass/*, callback*/){
+                $largeContainer.show();
+                var imgSrc = 'img/' + (idx + 1) + '-large.jpg';
+                var oImg = new Image();
+                oImg.onload = function(){
+                    var iImgWidth = this.width,
+                            iImgHeight = this.height,
+                            iClientWidth = $(document.body).width(),
+                            iClientHeight = $(window).height();
+                    if(iImgHeight/iImgWidth > (iClientHeight/iClientWidth)){
+                        $(this).css({
+                            height: iClientHeight
+                        });
+                    }else{
+                        $(this).css({
+                            width: iClientWidth
+                        });
+                    }
+                    //callback && callback.call(this);
+                    $(this).addClass(animateClass);
+                    $largeContainer.empty().append(this);
+                };
+                oImg.src = imgSrc;
+            }
+
+            var index = 0;
+            $largeContainer.on('tap', function(){
+                $(this).hide();
+            }).on('swipeLeft', function(){
+                index--;
+                if(index == -1){
+                    index = 0;
+                }
+//                $('img', this).addClass('animated bounceInRight');
+                loadImg(index, 'animated bounceInRight');
+            }).on('swipeRight', function(){
+                index++;
+                if(index == 16){
+                    index = 15;
+                }
+                loadImg(index, 'animated bounceInLeft');
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+</body>
+</html>

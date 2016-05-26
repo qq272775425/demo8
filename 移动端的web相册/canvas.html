@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #000000;
+        }
+        #cvs1{
+            background: #ffffff;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="cvs1"></canvas>
+
+<script>
+    var cvs = document.getElementById('cvs1');
+    var ctx = cvs.getContext('2d');
+    var oImg = new Image();
+    oImg.onload = function(){
+        ctx.drawImage(this, 10, 5);
+    };
+    oImg.src = 'img/1.jpg';
+</script>
+</body>
+</html>

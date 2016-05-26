@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            -webkit-animation: bounceIn1 0.5s ease-out both;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+
+        @-webkit-keyframes bounceIn1{
+            0%{
+                -webkit-transform: scale3d(0.3,0.3,0.3);
+                opacity: 0.7;
+            }
+            70%{
+                -webkit-transform: scale3d(1.2,1.2,1.2);
+            }
+            85%{
+                -webkit-transform: scale3d(0.8,0.8,0.8);
+
+            }
+            100%{
+                -webkit-transform: scale3d(1,1,1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="div1" class=""></div>
+<div id="div2" class="animated bounceIn"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //var arr = [1,5,7,8,2,11];
+    var arr = [
+        {num: 1},
+        {num: 5},
+        {num: 7},
+        {num: 8},
+        {num: 2},
+        {num: 11}
+    ];
+    arr.sort(function(a, b){
+        return a.num - b.num;
+    });
+
+    console.log(arr);
+</script>
+</body>
+</html>
